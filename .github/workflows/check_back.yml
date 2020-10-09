@@ -1,0 +1,31 @@
+name: Check back to see if there is a new comic
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4,16 * * * America/Denver'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Install ruby
+      uses: ruby/setup-ruby@v1
+      with: ruby-version: 2.7
+    - name: Install gems
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+    - name: Check back
+      run: bundle exec babygetsabottle.rb
+    - name: Commit latest comic
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest comic: ${timestamp}" || exit 0
+        git push
