@@ -21,7 +21,7 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
     - name: Check back
-      run: bundle exec babygetsabottle.rb
+      run: bundle exec ruby babygetsabottle.rb
     - name: Commit latest comic
       run: |-
         git config user.name "Automated"
