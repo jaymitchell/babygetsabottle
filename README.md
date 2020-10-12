@@ -9,3 +9,5 @@ The file babygetsabottle.rb stores the latest comic from Baby Wants A Bottle in 
 There is a GitHub workflow file (check_back.yml) that runs babygetsabottle.rb on a cron schedule. If there is a new latest comic it commits it back to this repo.
 
 GitHub emails me when a new file is pushed to this repo, which lets me know that a new comic is available.
+
+https://news.ycombinator.com/item?id=24732943 and https://simonwillison.net/2020/Oct/9/git-scraping/ provide more details about this technique.
