@@ -12,4 +12,4 @@ GitHub emails me when a new file is pushed to this repo, which lets me know that
 
 https://news.ycombinator.com/item?id=24732943 and https://simonwillison.net/2020/Oct/9/git-scraping/ provide more details about this technique.
 
-GitHub requires that there be changes every 60 days in order to support workflows, so sometimes I'll make minor changes to the project to meet that requirement.
+GitHub requires that there be changes every 60 days in order to support workflows, so sometimes I'll make minor changes, like this, to the project to meet that requirement.
